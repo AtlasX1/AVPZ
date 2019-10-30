@@ -1,12 +1,12 @@
 import React from 'react';
-
+import Container from 'react-bootstrap'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       OLOLO
-    </div>
+    </Container>
   );
 }
 
