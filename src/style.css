@@ -11,3 +11,10 @@
     -webkit-user-select: none;
     user-select: none;
   }
+  td input{
+    border: 0;
+    width: 100%;
+    text-align:center;
+  }
+
+  

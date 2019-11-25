@@ -20,3 +20,15 @@
 .App-link {
   color: #09d3ac;
 }
+
+input {
+  border: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.table td {
+  padding: 0px;
+  text-align: center;
+
+}
