@@ -8,14 +8,14 @@ const D = props => {
       </td>
     );
   }
-  if (props.colIndex === 4) {
+  if (props.colIndex === 4 || props.colIndex === 1 || props.colIndex === 3) {
     return (
       <td style={{ width: "25px", height: "10px" }}>
         <input type="text" readonly="readonly" value={props.data} />
       </td>
     );
   }
-  
+
   if (props.colIndex === 0) {
     return (
       <td style={{ width: "250px", height: "20px" }}>
