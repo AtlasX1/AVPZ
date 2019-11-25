@@ -8,13 +8,29 @@ export default class Analiz extends React.Component {
       disData: [],
       minVR: 0.01,
       maxVR: 0.6,
-
+      massER: [],
       massInterval: [
         [0.0, 0.0],
         [0.0, 0.0],
         [0.0, 0.0]
       ]
     };
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.data.ER !== this.props.data.ER) {
+      let tmp2 = [...this.state.disData];
+      let fatherMass = [];
+      let tmpMinVrer = 0.1;
+      let tmpMaxVrer = 0.9;
+      fatherMass = [...this.props.data.ER];
+      for (let i = 0; i < fatherMass.length; i++) {
+        tmp2[i + 1][1] = fatherMass[i];
+      }
+
+      this.changeVRER("minVR", tmpMinVrer);
+      this.changeVRER("maxVR", tmpMaxVrer);
+      this.setState({ disData: tmp2, massER: fatherMass });
+    }
   }
   changeVRER = (minMaxVrer, v) => {
     this.setState({ [minMaxVrer]: v }, () => {
@@ -55,7 +71,7 @@ export default class Analiz extends React.Component {
 
     this.changeVRER("minVR", tmpMinVrer);
     this.changeVRER("maxVR", tmpMaxVrer);
-    this.setState({ disData: tmp2 });
+    this.setState({ disData: tmp2, massER: fatherMass });
   };
   //Ініціалізація всього
   componentDidMount() {
@@ -82,6 +98,7 @@ export default class Analiz extends React.Component {
     tmp2.forEach((element, i) => {
       if (i > 0) element.push("");
     });
+
     this.setState({ disData: tmp2 });
   }
 
@@ -102,7 +119,7 @@ export default class Analiz extends React.Component {
     return (
       <Container fluid>
         <br />
-
+        {/* 
         <Button
           block
           onClick={() => {
@@ -110,7 +127,7 @@ export default class Analiz extends React.Component {
           }}
         >
           Результат
-        </Button>
+        </Button> */}
         <br />
         <Row>
           <Col md="9">

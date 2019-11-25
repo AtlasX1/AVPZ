@@ -34,7 +34,6 @@ export default class Analiz extends React.Component {
     this.props.updateData("indexMethods", indexMethod);
     this.setState({ disData: tmp2, methods: indexMethod }, () => {
       this.props.updateData("indexMethods", this.state.methods);
-      console.log(tmp2);
     });
   }
 
@@ -55,12 +54,6 @@ export default class Analiz extends React.Component {
   render() {
     return (
       <Container fluid>
-        <br />
-        <h5>
-          Виберіть найкращий захід для усунення або зменшення ризику та
-          натисніть кнопку "Показати результати"
-        </h5>
-
         <br />
         <Table bordered>
           <tbody>

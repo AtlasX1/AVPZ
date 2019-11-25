@@ -127,23 +127,16 @@ export default class App extends React.Component {
   updateData = (nameData, data) => {
     let tmpData = [];
     tmpData = [...data];
-    this.setState({ [nameData]: tmpData }, () => {
-      console.log(
-        "Масив з індексами, які вказують на позицію методу в масиві методів\n" +
-          this.state.indexMethods
-      );
-    });
+    this.setState({ [nameData]: tmpData }, () => {});
   };
 
   setER = tmpER => {
-    this.setState({ ER: tmpER }, () => {
-      console.log(this.state.ER);
-    });
+    this.setState({ ER: tmpER }, () => {});
   };
   render() {
     return (
       <Container fluid>
-        <Tabs defaultActiveKey="Tab4" className="tabs">
+        <Tabs defaultActiveKey="Tab3" className="tabs">
           <Tab eventKey="Tab1" title="Ідентифікація ризиків розроблення ПЗ">
             <Tabs defaultActiveKey="Tab1_1" className="tabs">
               <Tab eventKey="Tab1_1" title="Джерела появи ризиків">
